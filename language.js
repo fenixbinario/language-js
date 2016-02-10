@@ -3,7 +3,7 @@ function initTranslation(sectionID){
   if(languageID && sectionID){
         var translationFile = document.createElement('script');
 		translationFile.type = 'text/javascript';
-		translationFile.src = "locale/murodev-"+sectionID+"-"+languageID+".js";
+		translationFile.src = "locale/language-"+sectionID+"-"+languageID+".js";
 		document.getElementsByTagName('body')[0].appendChild(translationFile);
 
 		setTimeout(function(){
