@@ -8,7 +8,11 @@ Añadir el archivo JavaScript *language.js*
 
 ### Crear archivos de traduccion.
 Crear una carpeta llamada */locale/*.
-Crear los archivos dentro de esa carpeta, el nombre de estos archivos debe ser language-**identificadorSeccion**-**identificadorIdioma**.js.
+
+Crear los archivos dentro de esa carpeta, el nombre de estos archivos debe ser:
+
+language-**identificadorSeccion**-**identificadorIdioma**.js.
+
 
 *identificadorSeccion*: Un simple identificador para separar los archivos de traduccion.
 
