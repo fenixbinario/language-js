@@ -11,8 +11,7 @@ Crear una carpeta llamada */locale/*.
 
 Crear los archivos dentro de esa carpeta, el nombre de estos archivos debe ser:
 
-language-**identificadorSeccion**-**identificadorIdioma**.js.
-
+>language-**identificadorSeccion**-**identificadorIdioma**.js.
 
 *identificadorSeccion*: Un simple identificador para separar los archivos de traduccion.
 
