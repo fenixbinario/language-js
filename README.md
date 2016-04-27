@@ -1,7 +1,7 @@
 # language-js
 Soporte multi-idioma simple con JavaScript.
 ## Como usarlo:
-1. Añadir el archivo JavaScript *language.js*:
+- Añadir el archivo JavaScript *language.js*:
 
 ```html
   <script src="language.js"></script>
@@ -16,7 +16,7 @@ var LanguageJS = new LanguageJS([
 ```
 
 
-2. Crear archivos de traduccion.
+- Crear archivos de traduccion.
 Crea una carpeta llamada */locale/*.
 
 Crear los archivos dentro de esa carpeta, el nombre de estos archivos debe ser:
@@ -35,7 +35,7 @@ index.html | bd-*index*-*es*.js | language-*index*-*en*.js
 settings.html | bd-*settings*-*es*.js | language-*settings*-*en*.js
 
 
-3. Crear las traducciones:
+- Crear las traducciones:
 
 Dentro de cada archivo antes creado, se deben crear las traducciones con esta estructura:
 ```javascript
@@ -53,7 +53,7 @@ var localization = {
 ```
 
 
-4. Asignar identificadores a cada elemento HTML a traducir:
+- Asignar identificadores a cada elemento HTML a traducir:
 
 Para que se traduzca correctamente, debemos ir a nuestra HTML y añadir una clase que relacione el objeto con el texto que nemos introducido en los archivo de traduccion.
 Para que no existan confusiones sobre las clases, estas lleva un prefijo (*lang__*) del que va acompañado el identificador:
@@ -67,7 +67,7 @@ Ejemplo:
 ```
 
 
-5. Llamar a la funcion para traducir:
+- Llamar a la funcion para traducir:
 Funcion en JavaScript:
 ```javascript
     LanguageJS.translate('identificadorIdioma', 'identificadorSeccion');
