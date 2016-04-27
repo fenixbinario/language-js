@@ -1,30 +1,25 @@
-function initTranslation(sectionID){
-  var languageID = 'es';
-  if(languageID && sectionID){
-        var translationFile = document.createElement('script');
-		translationFile.type = 'text/javascript';
-		translationFile.src = "locale/murodev-"+sectionID+"-"+languageID+".js";
-		document.getElementsByTagName('body')[0].appendChild(translationFile);
-
-		setTimeout(function(){
-	    		translateApp();
-		}, 2000);
-	}else{
-		  alert('No se ha creado el archivo de traduccion.');
+function LanguageJS(items) {
+    this.addLanguageFile = function(){
+        var languageFile = document.getElementById('languageFile');
+        (languageFile != null) ? languageFile.parentNode.removeChild(languageFile):"";
+        languageFile = document.createElement('script');
+        languageFile.src = "locale/bd-" + this.section + "-" + this.languageID + ".js";
+        languageFile.id = "languageFile";
+        document.getElementsByTagName('body')[0].appendChild(languageFile);
     }
-}
 
-function translateApp(){
-	var translateIDs = [
-		"title",
-		"description",
-		"translate"
-	];
-	
-	for(i = 0; i<translateIDs.length;i++){
-		var elementToTranslate = document.getElementsByClassName('lang__'+translateIDs[i]);
-		for(ii = 0; ii<elementToTranslate.length;ii++){
-			elementToTranslate[ii].innerHTML = translateIDs[i];
-		}
-	}
+    this.translate = function(languageID, section) {
+        this.languageID = new String(languageID);
+        this.section = new String(section);
+        this.addLanguageFile();
+        var languageFile = document.getElementById('languageFile');
+        languageFile.onload = function(){
+            for (var i in items) {
+                var elementToTranslate = document.getElementsByClassName('lang__' + items[i]);
+                for (var o in elementToTranslate) {
+                    elementToTranslate[o].innerHTML = localization[items[i]];
+                }
+            }
+        }
+    }
 }
