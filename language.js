@@ -1,23 +1,23 @@
-function LanguageJS(items) {
+function LanguageJS(itemsToTranslate) {
     this.addLanguageFile = function(){
         var languageFile = document.getElementById('languageFile');
         (languageFile != null) ? languageFile.parentNode.removeChild(languageFile):"";
         languageFile = document.createElement('script');
-        languageFile.src = "locale/bd-" + this.section + "-" + this.languageID + ".js";
+        languageFile.src = "locale/bd-" + this.sectionID + "-" + this.languageID + ".js";
         languageFile.id = "languageFile";
         document.getElementsByTagName('body')[0].appendChild(languageFile);
     }
 
-    this.translate = function(languageID, section) {
+    this.translate = function(languageID, sectionID) {
         this.languageID = new String(languageID);
-        this.section = new String(section);
+        this.sectionID = new String(sectionID);
         this.addLanguageFile();
         var languageFile = document.getElementById('languageFile');
         languageFile.onload = function(){
-            for (var i in items) {
-                var elementToTranslate = document.getElementsByClassName('lang__' + items[i]);
+            for (var i in itemsToTranslate) {
+                var elementToTranslate = document.getElementsByClassName('lang__' + itemsToTranslate[i]);
                 for (var o in elementToTranslate) {
-                    elementToTranslate[o].innerHTML = localization[items[i]];
+                    elementToTranslate[o].innerHTML = localization[itemsToTranslate[i]];
                 }
             }
         }
